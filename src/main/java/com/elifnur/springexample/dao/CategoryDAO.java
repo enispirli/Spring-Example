@@ -8,7 +8,7 @@ public interface CategoryDAO {
 
 	Category insert(Category cat);
 
-	void delete(Category cat);
+	void delete(int id);
 
 	void update(Category cat);
 

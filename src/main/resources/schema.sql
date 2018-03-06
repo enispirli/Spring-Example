@@ -1,0 +1,37 @@
+CREATE TABLE user
+(
+ id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+ username varchar(25) NOT NULL UNIQUE,
+ name varchar(100) NOT NULL,
+ surname varchar(100) NOT NULL
+ );
+
+
+CREATE TABLE category
+(
+id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+name varchar(100) NOT NULL
+);
+
+CREATE TABLE post
+(
+id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,	
+title varchar(100) NOT NULL,
+text TEXT NOT NULL,
+categoryid INTEGER ,
+FOREIGN KEY(categoryid) REFERENCES category(id),
+userid INTEGER ,
+FOREIGN KEY(userid) REFERENCES user(id)
+);
+
+CREATE TABLE comment
+(
+id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+text TEXT NOT NULL,
+userid INTEGER,
+FOREIGN KEY(userid) REFERENCES user(id),
+postid INTEGER ,
+FOREIGN KEY(postid) REFERENCES post(id)
+);
+
+

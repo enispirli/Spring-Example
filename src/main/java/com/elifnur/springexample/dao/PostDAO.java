@@ -4,11 +4,12 @@ import java.util.List;
 
 import com.elifnur.springexample.model.Post;
 
+
 public interface PostDAO {
 
 	Post create(Post post);
 	
-	void delete (Post post);
+	void delete (int id);
 	
 	void update(Post post);
 	
@@ -16,7 +17,7 @@ public interface PostDAO {
 	
 	Post getById(int id);
 	
-	List<Post> getUserPosts(int userId);
+	List<Post> getUserPosts(int userid);
 	
 	
 }
